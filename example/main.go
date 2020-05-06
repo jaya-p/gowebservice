@@ -1,11 +1,8 @@
 package main
 
-import (
-	"fmt"
-
-	_ "github.com/jaya-p/gowebservice"
-)
+import "fmt"
+import "github.com/jaya-p/gowebservice/gowebservice"
 
 func main() {
-	fmt.Println(gowebservice.helloworld())
+	fmt.Println(helloworld())
 }
