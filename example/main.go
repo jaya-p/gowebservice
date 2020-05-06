@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+
+	_ "github.com/jaya-p/gowebservice"
 )
 
 func main() {
-	fmt.Println(gws.helloworld())
+	fmt.Println(gowebservice.helloworld())
 }
