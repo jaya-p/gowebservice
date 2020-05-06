@@ -1,5 +1,5 @@
 package gowebservice
 
-func helloworld() string {
+func Helloworld() string {
 	return "Hello World"
 }
