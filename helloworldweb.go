@@ -6,8 +6,8 @@ import (
 )
 
 // HelloworldHandler is helloworld that is access through http protocol
-func HelloworldHandler(w http.responseWriter, r *http.request) {
-	fmt.Fprintf(w, helloworld())
+func HelloworldHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, Helloworld())
 }
 
 // HelloworldWebserver is handling serve web request
