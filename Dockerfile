@@ -1,3 +1,7 @@
+# Build: docker build -t helloworldweb . 
+#         && docker images
+#         && docker run -p 8080:8080 helloworldweb // docker run -p <host-port>:<container-port> <image-name>
+#         && curl http://localhost:8080/helloworld
 # Use golang-based image for container; golang version 1.12.4
 FROM golang:1.12.4-alpine
 
