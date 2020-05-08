@@ -1,5 +1,5 @@
-// build: go build ./main.go
-// run: go run ./main.go
+// build: cd example/ && go build ./main.go
+// run: cd example/ && go run ./main.go
 package main
 
 import (
