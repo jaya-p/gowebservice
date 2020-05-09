@@ -1,5 +1,5 @@
-// build: cd example/ && go build ./mainWeb.go
-// run: cd example/ && go run ./mainWeb.go
+// build: go build example/mainWeb.go
+// run: go run example/mainWeb.go
 // test: curl http://localhost:8080/helloworld
 package main
 
