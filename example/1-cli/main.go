@@ -1,5 +1,5 @@
-// build: go build example/main.go
-// run: go run example/main.go
+// build: go build example/1-cli/main.go
+// run: go run example/1-cli/main.go
 package main
 
 import (

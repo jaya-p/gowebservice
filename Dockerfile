@@ -13,7 +13,7 @@ ENV GO111MODULE=on
 RUN apk add --no-cache git
 
 # Copy webserver go file in local computer to container
-COPY ./example/mainrestapi.go /go/src/
+COPY ./example/3-restapiwebserver/mainrestapi.go /go/src/
 
 # Set working directory in container
 WORKDIR /go

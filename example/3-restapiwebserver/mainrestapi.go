@@ -1,5 +1,5 @@
-// build: go build example/mainrestapi.go
-// run: go run example/mainrestapi.go
+// build: go build example/3-restapiwebserver/mainrestapi.go
+// run: go run example/3-restapiwebserver/mainrestapi.go
 // test:
 //				GET: curl http://localhost:8080/api/v1/helloworld
 //				POST: curl -d '{"name":"indonesia"}' -H "Content-Type: application/json" -X POST http://localhost:8080/api/v1/helloworld
