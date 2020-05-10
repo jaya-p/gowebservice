@@ -1,0 +1,41 @@
+# apply: kubectl apply -f k8s-gws.yaml
+# check: kubectl get all
+# check on service: curl http://localhost:30000/api/v1/helloworld
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: gws-service
+spec:
+  type: NodePort
+  selector:
+    app: gws
+  ports:
+      # targetPort is Pod/container's port. port is where other pods (in same cluster) connect to.
+    - port: 80
+      targetPort: 8080
+      # Optional field
+      # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
+      nodePort: 30000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gws-deployment
+  labels:
+    app: gws
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gws
+  template:
+    metadata:
+      labels:
+        app: gws
+    spec:
+      containers:
+      - name: gws
+        image: djayap/gowebservice:latest
+        ports:
+        - containerPort: 8080

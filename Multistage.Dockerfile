@@ -12,8 +12,10 @@
 # Use golang-based image for container; golang version 1.12.4
 FROM golang:1.12.4-alpine AS builder
 
-# Enable go modules for downloading dependencies
-ENV GO111MODULE=on
+# GO111MODULE=on to enable go modules for downloading dependencies
+# CGO_ENABLED=0 to include all linked library included in the output binary
+ENV GO111MODULE=on \  
+  CGO_ENABLED=0 
 
 # Add git executable in container
 RUN apk add --no-cache git
@@ -27,19 +29,15 @@ WORKDIR /go
 # Build the application
 RUN go build -o bin/main src/mainrestapi.go
 
-# Expose listening port for application
-EXPOSE 8080
-
-# Run the application
-CMD ["/go/bin/main"]
-
-
 # STAGE 2 is to have smallest image possible by including only necessary binary
 # Use smallest base image
 FROM scratch
 
 # Copy application binary from STAGE 1 image to STAGE 2 image
 COPY --from=builder /go/bin/main /
+
+# Expose listening port for application
+EXPOSE 8080
 
 # Run the application
 CMD ["/main"]
