@@ -40,7 +40,7 @@ func StatusNotFoundHandler(w http.ResponseWriter, r *http.Request) {
 // HelloworldRestAPIHandler is handles REST API (now only GET and POST) requests/responses
 func HelloworldRestAPIHandler(w http.ResponseWriter, r *http.Request) {
 	// Set HTTP Response "Content-Type" header as JSON
-	w.Header().Set("Content-type", "application/json")
+	w.Header().Set("Content-type", "text/plain; charset=utf-8")
 
 	// Set HTTP Response Body, based on HTTP request method
 	switch r.Method {
