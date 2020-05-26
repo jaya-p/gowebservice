@@ -62,7 +62,7 @@ func TestPostHandler(t *testing.T) {
 	}
 }
 
-func TestDefaultHandler(t *testing.T) {
+func TestStatusNotFoundHandler(t *testing.T) {
 
 	r := httptest.NewRequest("DELETE", "/api/v1/helloworld", nil)
 	w := httptest.NewRecorder()
