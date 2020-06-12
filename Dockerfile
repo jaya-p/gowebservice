@@ -25,4 +25,4 @@ RUN go build -o bin/main src/mainrestapi.go
 EXPOSE 8080
 
 # Run the application
-CMD ["/go/bin/main"]
+ENTRYPOINT ["/go/bin/main"]

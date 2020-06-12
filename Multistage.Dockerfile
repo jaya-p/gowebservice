@@ -40,4 +40,4 @@ COPY --from=builder /go/bin/main /
 EXPOSE 8080
 
 # Run the application
-CMD ["/main"]
+ENTRYPOINT ["/main"]
