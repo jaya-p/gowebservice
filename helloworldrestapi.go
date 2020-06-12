@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"io"
 	"net/http"
+        "fmt"
 )
 
 // structure of POST json
@@ -54,8 +55,8 @@ func HelloworldRestAPIHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 // HelloworldRestAPIWebserver provides connectivity for handling REST API request
-func HelloworldRestAPIWebserver() {
+func HelloworldRestAPIWebserver(pNum uint) {
 	http.HandleFunc("/api/v1/helloworld", HelloworldRestAPIHandler)
 
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":"+fmt.Sprint(pNum), nil)
 }

@@ -14,6 +14,8 @@ import (
 )
 
 func main() {
+	var httpPortNumber uint = 80
+
 	fmt.Println("REST API web server is running")
-	gowebservice.HelloworldRestAPIWebserver()
+	gowebservice.HelloworldRestAPIWebserver(httpPortNumber)
 }
